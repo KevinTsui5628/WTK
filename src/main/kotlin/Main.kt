@@ -1,16 +1,29 @@
-package org.example
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    // Initialize the GeneralManager
+    val generalManager = GeneralManager
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    // Get the total numbers of Lord and non-Lord
+//    val lordFactory = LordFactory()
+//    val nonLordFactory = NonLordFactory()
+//    val lordsToSelect = lordFactory.total()
+//    val nonLordsToSelect = nonLordFactory.total()
+
+    val numOfPlayer = 5
+
+    // create Lord and non-Lord General objects
+    generalManager.createGenerals(numOfPlayer)
+
+    // Retrieve the general count and print it out
+    val count = generalManager.getGeneralCount()
+    println("Total number of generals: $count\n")
+
+
+//    val generalList = generalManager.getGeneralsList()
+//    val firstGeneral = generalList[0]
+//    val armoredGeneral = EightTrigrams(firstGeneral)
+//    armoredGeneral.beingAttacked(1)
+    generalManager.gameStart()
+
 }
